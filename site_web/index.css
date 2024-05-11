@@ -1,0 +1,310 @@
+*{
+    box-sizing: border-box;
+}
+
+p, footer, header, h2, .topnav, .cube{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;  
+}
+
+body{
+    /* background-image: url("bg.jpg"); */
+    /* background-repeat: repeat; */
+    background-color: #0B162C;
+    background-size: cover;
+    
+    /* pas de scroll */
+    margin : 0;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+p{
+    font-size : 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ****************************** */
+
+/*Pour la barre du Haut */
+
+.topnav{
+    overflow: hidden;
+    background-color: #1C2942;
+}
+  
+.topnav a{
+    font-size: 20px;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav .gauche{
+    float: left;
+}
+
+.topnav .droite{
+    float: right;
+}
+
+/* .topnav gauche:hover{
+    background-color: #ddd;
+    color: black;
+} */
+
+.topnav a.droite:hover{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* ******************************* */
+
+/* Gestion du grillage */
+
+.column {
+    float: left;
+    padding: 10px;
+}
+  
+.column.side_left {
+    width: 25%;
+    padding-left: 20px;
+}
+
+.column.side_right {
+    width: 25%;
+    padding-right: 20px;
+}
+  
+.column.middle {
+    width: 50%;
+}
+
+.card {
+    background-color: #3B556D;
+    color: #f0f0f0;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 6px 6px 0px #1C2942;
+    border-radius: 25px;
+}
+  
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+
+/* ******************************* */
+
+/* Pour le switch */
+
+.switch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c61b1b;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #0fc743;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #0fc743;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* *********************** */
+
+/* Pour le cube en 3D */
+
+.container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 100px auto 100px;
+}
+  
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* animation: spin 10s infinite linear; */
+}
+  
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+  
+.top {
+    background-color: rgba(255, 255, 255, 0.2);
+    border : 2px solid black;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+    background-color: rgba(255, 255, 255, 0.2);
+    border : 2px solid black;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+  
+.right {
+    background-color: rgba(255, 255, 255, 0.2);
+    border : 2px solid black;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+    background-color: rgba(255, 255, 255, 0.2);
+    border : 2px solid black;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+  
+.front {
+    background-color: rgba(255, 255, 255, 0.2);
+    border : 2px solid black;
+    transform: rotateX(0deg) translateZ(100px);
+}
+
+.back {
+    background-color: rgba(255, 255, 255, 0.2);
+    border : 2px solid black;  
+    transform: rotateX(-180deg) translateZ(100px);
+}
+
+/* *********************** */
+
+/* bar de progression */
+
+
+.progression-bar-container {
+    background-color: #0B162C;
+    color: #0B162C;
+    border-radius: 15px;
+    width: 100%;
+}
+  
+.progressbar{
+    background-color: var(--progress);
+    color: #0B162C;
+    padding: 1rem;
+    text-align: right;
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    width: 60%;
+}
+
+/* *********************** */
+
+/* Etat bouton */
+
+.bouton-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+.bouton {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    /*margin: 4px 2px;*/
+}
+
+.btn_state {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #c61b1b;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+
+/* pied de page */
+footer{
+    text-align: center;   
+    background-color: #1C2942;
+    color: #ffffff;
+    font-size :small;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 45px;
+    padding: 10px 16px;
+}

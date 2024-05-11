@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+    
+<head>
+    <meta charset="utf-8">
+    <title> Projet IOC 2024</title>
+    <link href="index.css" rel="stylesheet">
+    <!-- pour accéder aux données avec javascript-->
+    <script src="script.js" defer></script>
+    <script type="text/javascript" src="eel.js"></script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="gauche">Projet IOC 2024</a>
+        <!-- <droite onclick="document.location='https://github.com/'">Le code</droite> -->
+        <a class="droite" href="https://github.com" target="_blank">Le code</a>
+    </div>
+
+    <div class="row">
+        <div class="column side_left">
+            <div class="card">
+                <h2 class="center">Contrôle de la LED</h2>
+                <p class="center"> LED :
+                    <span class="center" id="switch_val"> OFF </span>
+                </p>
+
+                <div class="switch-container">
+                    <label class="switch">
+                        <input id="led_switch" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="column middle">
+            <div class="card">
+                <h2 class="center">Position de l'esp 32 dans l'espace</h2>
+                <div class="container">
+                    <div class="cube" id="cube_esp32">
+                        <div class="face front center">avant</div>
+                        <div class="face back center">arrière</div>
+                        <div class="face right center">droite</div>
+                        <div class="face left center">gauche</div>
+                        <div class="face top center">dessus</div>
+                        <div class="face bottom center">dessous</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="center">Intensité de la lumière</h2>
+                <p class="center" id="photoVal">0</p>
+                <div class="progression-bar-container">
+                    <div class="progressbar" id="progress_value"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column side_right">
+            <div class="card">
+                <h2 class="center">Lecture du bouton</h2>
+                <p class="center">Bouton : 
+                    <span class="center" id="bouton_val">pas appuyé</span>
+                </p>
+                
+                <div class="bouton-container">
+                    <label class="bouton">
+                        <span class="btn_state" id="bouton_c"></span>
+                    </label>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Bouri Raïssa - LIU Owen
+    </footer>
+</body>
+
+</html>
