@@ -1,5 +1,5 @@
-lum: 24%
-angleX: 0
-angleY: 0
+lum: 36%
+angleX: 3
+angleY: -4
 angleZ: 0
 btn: 0

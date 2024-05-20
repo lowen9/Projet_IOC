@@ -3,6 +3,8 @@ from paho.mqtt import client as mqtt
 MQTT_BROKER = "localhost"
 MQTT_TOPIC_LUM = "lum"
 MQTT_TOPIC_BTN = "btn"
+MQTT_TOPIC_AX = "angle_x"
+MQTT_TOPIC_AY = "angle_y"
 
 DATA_BASE = "../database2web.txt"
 
@@ -49,6 +51,10 @@ def on_connect( client, userdata, flags, rc):
     print("subscribe to :\"", MQTT_TOPIC_LUM, "\"")
     client.subscribe(MQTT_TOPIC_BTN)
     print("subscribe to :\"", MQTT_TOPIC_BTN, "\"")
+    client.subscribe(MQTT_TOPIC_AX)
+    print("subscribe to :\"", MQTT_TOPIC_AX, "\"")
+    client.subscribe(MQTT_TOPIC_AY)
+    print("subscribe to :\"", MQTT_TOPIC_AY, "\"")
   else : 
     print("bad connection to :\"", MQTT_TOPIC_LUM, "\"")
 
@@ -64,6 +70,16 @@ def on_message(client, userdata, msg):
     print("btn_val = ", int(msg.payload.decode("utf-8")))
     global btn_val
     btn_val = int(msg.payload.decode("utf-8"))
+    
+  if(topic_name == "angle_x"):
+    print("angle_x = ", int(msg.payload.decode("utf-8")))
+    global angleX
+    angleX = int(msg.payload.decode("utf-8"))
+  
+  if(topic_name == "angle_y"):
+    print("angle_y = ", int(msg.payload.decode("utf-8")))
+    global angleY
+    angleY = int(msg.payload.decode("utf-8"))
   
   data = [lum_val,angleX,angleY,angleZ,btn_val]
   

@@ -70,10 +70,9 @@ async function update_value(){
 
     balisePhotoR.innerHTML = data[0];
     progress_bar.style.width = data[0];
-    rotationAngleX = data[1];
+    rotationAngleX = -data[1];
     rotationAngleY = data[2];
-    rotationAngleZ = data[3];
-    cube.style.transform = `rotateX(${rotationAngleX}deg) rotateY(${rotationAngleY}deg) rotateZ(${rotationAngleZ}deg)`;
+    cube.style.transform = `rotateX(${rotationAngleX}deg) rotateZ(${rotationAngleY}deg)`;
     bouton_val = data[4];
     console.log('btn:', bouton_val);
     if(bouton_val === 1){
